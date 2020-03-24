@@ -292,7 +292,7 @@ class Rediska_PubSub_Channel extends Rediska_Options_RediskaInstance implements 
      */
     public function setTimeout($timeout)
     {
-        $this->_timeout = (int)$timeout;
+        $this->_timeout = (float)$timeout;
         
         return $this;
     }
