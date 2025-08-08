@@ -51,9 +51,9 @@ class Rediska_Serializer_Adapter_PhpSerialize implements Rediska_Serializer_Adap
     /**
      * Catch unserialize notice
      */
-    public function catchUnserializeNotice($errno, $errstr, $errfile, $errline, $errcontext)
+    public function catchUnserializeNotice($errno, $errstr, $errfile, $errline)
     {
-        if (!error_reporting() && strpos($errstr, 'unserialize()') !== false) {
+        if (strpos($errstr, 'unserialize()') !== false) {
             $this->_unserialized = false;
             return true;
         } else {
